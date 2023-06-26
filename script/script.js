@@ -1,37 +1,28 @@
-alert('Hello')// Iterative function to implement Binary Search
-let iterativeFunction = function (arr, x) {
-
-    let start = 0, end = arr.length - 1;
-
-    // Iterate while start not meets end
-    while (start <= end) {
-
-        // Find the mid index
-        let mid = Math.floor((start + end) / 2);
-
-        // If element is present at mid, return True
-        if (arr[mid] === x) return true;
-
-        // Else look in left or right half accordingly
-        else if (arr[mid] < x)
-            start = mid + 1;
-        else
-            end = mid - 1;
+// Bubble sort Implementation using Javascript
+  
+// Creating the bblSort function
+function bblSort(arr) {
+  
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            // is greater than the next iteration
+            if (arr[j] > arr[j + 1]) {
+  
+                // If the condition is true
+                // then swap them
+                var temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
     }
-
-    return false;
+  
+    // Print the sorted array
+    console.log(arr);
 }
-
-// Driver code
-let arr = [1, 3, 5, 7, 8, 9];
-let x = 5;
-
-if (iterativeFunction(arr, x, 0, arr.length - 1))
-    document.write("Element found!<br>");
-else document.write("Element not found!<br>");
-
-x = 6;
-
-if (iterativeFunction(arr, x, 0, arr.length - 1))
-    document.write("Element found!<br>");
-else document.write("Element not found!<br>");
+  
+// This is our unsorted array
+var arr = [234, 43, 55, 63, 5, 6, 235, 547];
+  
+// Now pass this array to the bblSort() function
+bblSort(arr);
